@@ -63,16 +63,33 @@ class FoodTrucksListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupButton()
         fetchFoodTruckList()
     }
 
+    func setupButton() {
+        let b = UIBarButtonItem(
+            title: "Maps",
+            style: .plain,
+            target: self,
+            action: #selector(showMaps(sender:))
+        )
+        self.navigationItem.rightBarButtonItem = b
+    }
+    
+    @objc func showMaps(sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "FoodTrucksMapViewController") as! FoodTrucksMapViewController
+//        vc.newsObj = newsObj
+        present(vc, animated: true, completion: nil)
+    }
+    
     func fetchFoodTruckList() {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         let dayInWeek = dateFormatter.string(from: date)
         let url = "https://data.sfgov.org/resource/jjew-r69b.json?dayofweekstr=" + dayInWeek
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
         DispatchQueue.global(qos: .background).async {
             Network.downloadUrl(url: URL(string: url)!, completion: self.completionHandler(success:jsonString:))
         }
