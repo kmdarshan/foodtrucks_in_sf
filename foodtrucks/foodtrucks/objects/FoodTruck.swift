@@ -11,16 +11,17 @@ import Foundation
 struct FoodTrucks : Decodable {
     var trucks : [Information]
     struct Information : Decodable {
-        var dayorder : String
-        var dayofweekstr : String
-        var starttime : String
-        var endtime : String
-        var start24 : String
-        var end24 : String
-        var latitude : String
-        var longitude : String
-        var applicant : String
-        var location : String
+        let dayorder : String?
+        let dayofweekstr : String?
+        let starttime : String?
+        let endtime : String?
+        let start24 : String?
+        let end24 : String?
+        let latitude : String?
+        let longitude : String?
+        let applicant : String?
+        let location : String?
+        let optionaltext : String?
     }
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()

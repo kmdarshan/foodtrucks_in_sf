@@ -60,13 +60,15 @@ class FoodTrucksListViewController: UITableViewController {
         let truckInfo = foodTrucksInfo[indexPath.row]
         cell.name.text = truckInfo.trucks[0].applicant
         cell.address.text = truckInfo.trucks[0].location
-        cell.openHours.text = truckInfo.trucks[0].starttime + "-" + truckInfo.trucks[0].endtime
+        cell.openHours.text = (truckInfo.trucks[0].starttime ?? "-- AM") + "-" + (truckInfo.trucks[0].endtime ?? "-- PM")
+        cell.optionalText.text = truckInfo.trucks[0].optionaltext ?? ""
         return cell
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return UITableView.automaticDimension
     }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
