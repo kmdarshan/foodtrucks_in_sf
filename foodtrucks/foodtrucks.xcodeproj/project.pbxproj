@@ -13,9 +13,10 @@
 		7D2ED2C52299C3B100446FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D2ED2C42299C3B100446FEC /* Assets.xcassets */; };
 		7D2ED2C82299C3B100446FEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2ED2C62299C3B100446FEC /* LaunchScreen.storyboard */; };
 		7D2ED2D12299C6DA00446FEC /* FoodTruck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ED2D02299C6D900446FEC /* FoodTruck.swift */; };
-		7D2ED2D32299CA2D00446FEC /* FoodTrucksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ED2D22299CA2D00446FEC /* FoodTrucksViewController.swift */; };
 		7D2ED2D52299CA4600446FEC /* FoodTrucksMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ED2D42299CA4600446FEC /* FoodTrucksMapController.swift */; };
 		7D2ED2D8229D0A3800446FEC /* NetworkHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ED2D7229D0A3800446FEC /* NetworkHandlers.swift */; };
+		7D2ED2DD22A110AD00446FEC /* FoodTrucksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ED2DC22A110AD00446FEC /* FoodTrucksListViewController.swift */; };
+		7D2ED2E022A1164000446FEC /* FoodTruckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ED2DF22A1164000446FEC /* FoodTruckTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +28,10 @@
 		7D2ED2C72299C3B100446FEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D2ED2C92299C3B100446FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D2ED2D02299C6D900446FEC /* FoodTruck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruck.swift; sourceTree = "<group>"; };
-		7D2ED2D22299CA2D00446FEC /* FoodTrucksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrucksViewController.swift; sourceTree = "<group>"; };
 		7D2ED2D42299CA4600446FEC /* FoodTrucksMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrucksMapController.swift; sourceTree = "<group>"; };
 		7D2ED2D7229D0A3800446FEC /* NetworkHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandlers.swift; sourceTree = "<group>"; };
+		7D2ED2DC22A110AD00446FEC /* FoodTrucksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrucksListViewController.swift; sourceTree = "<group>"; };
+		7D2ED2DF22A1164000446FEC /* FoodTruckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FoodTruckTableViewCell.swift; path = foodtrucks/controllers/FoodTruckTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		7D2ED2BC2299C3AD00446FEC /* foodtrucks */ = {
 			isa = PBXGroup;
 			children = (
+				7D2ED2DE22A1161900446FEC /* views */,
 				7D2ED2D62299CACE00446FEC /* controllers */,
 				7D2ED2CF2299C67200446FEC /* objects */,
 				7D2ED2BD2299C3AE00446FEC /* AppDelegate.swift */,
@@ -86,8 +89,8 @@
 		7D2ED2D62299CACE00446FEC /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7D2ED2D22299CA2D00446FEC /* FoodTrucksViewController.swift */,
 				7D2ED2D42299CA4600446FEC /* FoodTrucksMapController.swift */,
+				7D2ED2DC22A110AD00446FEC /* FoodTrucksListViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -99,6 +102,15 @@
 			);
 			name = network;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		7D2ED2DE22A1161900446FEC /* views */ = {
+			isa = PBXGroup;
+			children = (
+				7D2ED2DF22A1164000446FEC /* FoodTruckTableViewCell.swift */,
+			);
+			name = views;
+			path = controllers/views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,8 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D2ED2D52299CA4600446FEC /* FoodTrucksMapController.swift in Sources */,
-				7D2ED2D32299CA2D00446FEC /* FoodTrucksViewController.swift in Sources */,
+				7D2ED2E022A1164000446FEC /* FoodTruckTableViewCell.swift in Sources */,
 				7D2ED2C02299C3AE00446FEC /* MainAppController.swift in Sources */,
+				7D2ED2DD22A110AD00446FEC /* FoodTrucksListViewController.swift in Sources */,
 				7D2ED2D8229D0A3800446FEC /* NetworkHandlers.swift in Sources */,
 				7D2ED2BE2299C3AE00446FEC /* AppDelegate.swift in Sources */,
 				7D2ED2D12299C6DA00446FEC /* FoodTruck.swift in Sources */,

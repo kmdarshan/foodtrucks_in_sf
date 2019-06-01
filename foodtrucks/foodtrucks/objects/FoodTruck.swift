@@ -19,6 +19,8 @@ struct FoodTrucks : Decodable {
         var end24 : String
         var latitude : String
         var longitude : String
+        var applicant : String
+        var location : String
     }
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()

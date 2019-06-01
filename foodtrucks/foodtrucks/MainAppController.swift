@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainAppController: UIViewController {
+class MainAppController: UINavigationController {
     
     func completionHandler(success: Bool, jsonString: String) {
         if(!success) {
@@ -16,8 +16,8 @@ class MainAppController: UIViewController {
         } else {
             let jsonData = jsonString.data(using: .utf8)
             let decoder = JSONDecoder()
-            let foodtruckInfo = try! decoder.decode(Array<FoodTrucks>.self, from: jsonData!)
-            print("size ",foodtruckInfo.count)
+//            let foodtruckInfo = try! decoder.decode(Array<FoodTrucks>.self, from: jsonData!)
+//            print("size ",foodtruckInfo.count)
         }
     }
     
