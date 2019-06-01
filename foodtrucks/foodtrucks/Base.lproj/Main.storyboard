@@ -13,12 +13,13 @@
         <scene sceneID="dap-pK-GSx">
             <objects>
                 <tableViewController id="guF-AU-gzm" customClass="FoodTrucksListViewController" customModule="foodtrucks" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GoX-35-tZN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GoX-35-tZN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodTruckTableViewCell" id="KyS-qF-Kfi" customClass="FoodTruckTableViewCell" customModule="foodtrucks" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoodTruckTableViewCell" id="KyS-qF-Kfi" customClass="FoodTruckTableViewCell" customModule="foodtrucks" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KyS-qF-Kfi" id="ofk-V3-iJP">
@@ -26,32 +27,32 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLj-SR-32h">
-                                            <rect key="frame" x="0.0" y="-1" width="375" height="141"/>
+                                            <rect key="frame" x="0.0" y="-1" width="375" height="0.0"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhk-Ky-ElS">
-                                                    <rect key="frame" x="10" y="10" width="252" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="10" y="14" width="227" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRf-nF-9ce">
-                                                    <rect key="frame" x="10" y="41" width="252" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="10" y="43" width="227" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optional Text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fs8-zt-yE2" userLabel="OptionalText">
-                                                    <rect key="frame" x="10" y="72" width="357" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="10" y="69.5" width="357" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugx-ju-8Tb">
-                                                    <rect key="frame" x="267" y="41" width="100" height="21"/>
+                                                    <rect key="frame" x="237" y="41" width="130" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="q6n-c5-pbJ"/>
+                                                        <constraint firstAttribute="width" constant="130" id="q6n-c5-pbJ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -59,12 +60,12 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="zRf-nF-9ce" firstAttribute="firstBaseline" secondItem="Ugx-ju-8Tb" secondAttribute="firstBaseline" id="4NP-zf-YFf"/>
-                                                <constraint firstItem="fs8-zt-yE2" firstAttribute="top" secondItem="zRf-nF-9ce" secondAttribute="bottom" constant="10" id="4ZM-m6-hFh"/>
+                                                <constraint firstItem="fs8-zt-yE2" firstAttribute="top" secondItem="zRf-nF-9ce" secondAttribute="bottom" constant="5" id="4ZM-m6-hFh"/>
                                                 <constraint firstItem="Ugx-ju-8Tb" firstAttribute="trailing" secondItem="fs8-zt-yE2" secondAttribute="trailing" id="7Kv-Km-JRb"/>
-                                                <constraint firstItem="Ugx-ju-8Tb" firstAttribute="leading" secondItem="zRf-nF-9ce" secondAttribute="trailing" constant="5" id="PxG-ir-ZNZ"/>
+                                                <constraint firstItem="Ugx-ju-8Tb" firstAttribute="leading" secondItem="zRf-nF-9ce" secondAttribute="trailing" id="PxG-ir-ZNZ"/>
                                                 <constraint firstItem="Ugx-ju-8Tb" firstAttribute="top" secondItem="ZLj-SR-32h" secondAttribute="top" constant="41" id="UNf-sV-xbg"/>
                                                 <constraint firstItem="zRf-nF-9ce" firstAttribute="leading" secondItem="fs8-zt-yE2" secondAttribute="leading" id="aVf-rg-vKX"/>
-                                                <constraint firstItem="zRf-nF-9ce" firstAttribute="top" secondItem="uhk-Ky-ElS" secondAttribute="bottom" constant="10" id="eWQ-JT-da2"/>
+                                                <constraint firstItem="zRf-nF-9ce" firstAttribute="top" secondItem="uhk-Ky-ElS" secondAttribute="bottom" constant="5" id="eWQ-JT-da2"/>
                                                 <constraint firstAttribute="bottom" secondItem="fs8-zt-yE2" secondAttribute="bottom" constant="48" id="gco-jF-QsQ"/>
                                                 <constraint firstItem="uhk-Ky-ElS" firstAttribute="leading" secondItem="ZLj-SR-32h" secondAttribute="leading" constant="10" id="ohH-rS-XFW"/>
                                                 <constraint firstItem="Ugx-ju-8Tb" firstAttribute="trailing" secondItem="ZLj-SR-32h" secondAttribute="trailingMargin" id="pb8-nm-kbR"/>

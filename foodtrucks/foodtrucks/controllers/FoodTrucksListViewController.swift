@@ -14,11 +14,14 @@ class FoodTrucksListViewController: UITableViewController {
     func completionHandler(success: Bool, jsonString: String) {
         if(!success) {
             // don't load the table views
+            // error getting data, show it to the user
         } else {
             let jsonData = jsonString.data(using: .utf8)!
             let decoder = JSONDecoder()
             do {
                 foodTrucksInfo = try decoder.decode(Array<FoodTrucks>.self, from: jsonData)
+                print("before size ",foodTrucksInfo.count)
+                fetchOpenFoodTrucks()
                 DispatchQueue.main.async { [weak self] in
                     if((self?.foodTrucksInfo.count)! > 0) {
                         self?.tableView.reloadData()
@@ -27,23 +30,54 @@ class FoodTrucksListViewController: UITableViewController {
             } catch let error {
                 print(error)
             }
-            print("size ",foodTrucksInfo.count)
+            print("after size ",foodTrucksInfo.count)
         }
+    }
+    
+    func fetchFormattedHourAndMinute(time : String) -> Date {
+        let timeArray = time.components(separatedBy: ":")
+        let calendar = Calendar.current
+        let now = Date()
+        let formattedTime = calendar.date(
+            bySettingHour: timeArray.count > 0 ? Int(timeArray[0]) ?? 0 : 0,
+            minute: timeArray.count > 1 ? Int(timeArray[1]) ?? 0 : 0,
+            second: 0,
+            of: now) ?? now
+        return formattedTime
+    }
+    
+    func fetchOpenFoodTrucks() {
+        var filteredFoodTrucksInfo : Array<FoodTrucks> = []
+        for foodtruck in foodTrucksInfo {
+            let now = Date()
+            let startTime = fetchFormattedHourAndMinute(time: foodtruck.trucks[0].start24 ?? "00:00")
+            let endTime = fetchFormattedHourAndMinute(time: foodtruck.trucks[0].end24 ?? "00:00")
+            if now >= startTime &&
+                now <= endTime
+            {
+                filteredFoodTrucksInfo.append(foodtruck)
+            }
+        }
+        foodTrucksInfo = filteredFoodTrucksInfo
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
-        DispatchQueue.global(qos: .background).async {
-            Network.downloadUrl(url: URL(string: "https://data.sfgov.org/resource/jjew-r69b.json")!, completion: self.completionHandler(success:jsonString:))
-        }
+        fetchFoodTruckList()
     }
 
+    func fetchFoodTruckList() {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let dayInWeek = dateFormatter.string(from: date)
+        let url = "https://data.sfgov.org/resource/jjew-r69b.json?dayofweekstr=" + dayInWeek
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        DispatchQueue.global(qos: .background).async {
+            Network.downloadUrl(url: URL(string: url)!, completion: self.completionHandler(success:jsonString:))
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
