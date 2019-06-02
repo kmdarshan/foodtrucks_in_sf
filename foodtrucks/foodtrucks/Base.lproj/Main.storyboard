@@ -111,9 +111,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HPb-Wx-h9x">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPb-Wx-h9x">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Food Trucks" id="DON-jY-4Wv">
                                         <barButtonItem key="rightBarButtonItem" title="List" id="2xy-KX-iqD">
@@ -124,12 +123,20 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MkP-0u-Ttq">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MkP-0u-Ttq">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MkP-0u-Ttq" firstAttribute="bottom" secondItem="ksh-AN-gFt" secondAttribute="bottom" id="6as-gt-hMH"/>
+                            <constraint firstItem="MkP-0u-Ttq" firstAttribute="top" secondItem="HPb-Wx-h9x" secondAttribute="bottom" id="Ft4-XE-oAv"/>
+                            <constraint firstItem="MkP-0u-Ttq" firstAttribute="leading" secondItem="ksh-AN-gFt" secondAttribute="leading" id="JsC-v7-uXU"/>
+                            <constraint firstItem="HPb-Wx-h9x" firstAttribute="leading" secondItem="MkP-0u-Ttq" secondAttribute="leading" id="dTL-m9-eB7"/>
+                            <constraint firstItem="HPb-Wx-h9x" firstAttribute="trailing" secondItem="MkP-0u-Ttq" secondAttribute="trailing" id="lJH-gq-Uuz"/>
+                            <constraint firstItem="HPb-Wx-h9x" firstAttribute="top" secondItem="ksh-AN-gFt" secondAttribute="top" id="lJq-7g-0er"/>
+                            <constraint firstItem="MkP-0u-Ttq" firstAttribute="trailing" secondItem="ksh-AN-gFt" secondAttribute="trailing" id="pDS-W3-vlD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ksh-AN-gFt"/>
                     </view>
                     <connections>
