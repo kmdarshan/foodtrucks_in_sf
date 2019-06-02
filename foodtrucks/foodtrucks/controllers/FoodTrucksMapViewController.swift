@@ -11,7 +11,10 @@ import CoreLocation
 import MapKit
 class FoodTrucksMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var mapview: MKMapView!
-    @IBOutlet weak var foodtruckInfoView: UIView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var openHours: UILabel!
+    @IBOutlet weak var tags: UILabel!
     var foodtrucksInfo : Array<FoodTrucks> = []
     let locationManager = CLLocationManager()
     @IBAction func showListController(_ sender: Any) {
@@ -81,7 +84,7 @@ class FoodTrucksMapViewController: UIViewController, CLLocationManagerDelegate, 
             truck.position = position
             truck.coordinate = CLLocationCoordinate2D(latitude: Double(foodtruck.trucks[0].latitude ?? "37.787407398506105") ?? 37.787407398506105, longitude: Double(foodtruck.trucks[0].longitude ?? "-122.40741302567949") ?? -122.40741302567949)
             mapview.addAnnotation(truck)
-            position = position + 1
+            position += 1
         }
     }
     
@@ -100,6 +103,9 @@ class FoodTrucksMapViewController: UIViewController, CLLocationManagerDelegate, 
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print(foodtrucksInfo[view.tag].trucks[0].applicant)
+        name.text = foodtrucksInfo[view.tag].trucks[0].applicant
+        address.text = foodtrucksInfo[view.tag].trucks[0].location
+        openHours.text = (foodtrucksInfo[view.tag].trucks[0].starttime ?? "-- AM") + "-" + (foodtrucksInfo[view.tag].trucks[0].endtime ?? "-- PM")
+        tags.text = foodtrucksInfo[view.tag].trucks[0].optionaltext ?? ""
     }
 }
