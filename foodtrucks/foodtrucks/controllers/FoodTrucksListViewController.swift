@@ -20,7 +20,6 @@ class FoodTrucksListViewController: UITableViewController {
             let decoder = JSONDecoder()
             do {
                 foodTrucksInfo = try decoder.decode(Array<FoodTrucks>.self, from: jsonData)
-                print("before size ",foodTrucksInfo.count)
                 fetchOpenFoodTrucks()
                 DispatchQueue.main.async { [weak self] in
                     if((self?.foodTrucksInfo.count)! > 0) {
@@ -31,7 +30,6 @@ class FoodTrucksListViewController: UITableViewController {
             } catch let error {
                 print(error)
             }
-            print("after size ",foodTrucksInfo.count)
         }
     }
     
