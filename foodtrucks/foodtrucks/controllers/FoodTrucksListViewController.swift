@@ -78,9 +78,8 @@ class FoodTrucksListViewController: UITableViewController {
     }
     
     @objc func showMaps(sender: UIBarButtonItem) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "FoodTrucksMapViewController") as! FoodTrucksMapViewController
-//        vc.newsObj = newsObj
+            vc.foodtrucksInfo = foodTrucksInfo
         present(vc, animated: true, completion: nil)
     }
     

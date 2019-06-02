@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>We use this update your location, and provide foodtrucks closest to you.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We use this update your location, and provide foodtrucks closest to you.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>We use this update your location, and provide foodtrucks closest to you.</string>
 </dict>
 </plist>
