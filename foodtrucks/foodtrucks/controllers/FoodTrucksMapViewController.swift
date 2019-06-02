@@ -9,8 +9,9 @@
 import UIKit
 import CoreLocation
 import MapKit
-class FoodTrucksMapViewController: UIViewController, CLLocationManagerDelegate {
+class FoodTrucksMapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var mapview: MKMapView!
+    @IBOutlet weak var foodtruckInfoView: UIView!
     var foodtrucksInfo : Array<FoodTrucks> = []
     let locationManager = CLLocationManager()
     @IBAction func showListController(_ sender: Any) {
@@ -52,6 +53,7 @@ class FoodTrucksMapViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         //askLocationPermission()
+        mapview.delegate = self
         pinLocations()
     }
 
@@ -72,22 +74,32 @@ class FoodTrucksMapViewController: UIViewController, CLLocationManagerDelegate {
     
     func pinLocations() {
         setScalingFactor(coordinate: CLLocationCoordinate2D(latitude: 37.787407398506105, longitude: -122.40741302567949)) // just going to set it to SF
+        var position = 0
         for foodtruck in foodtrucksInfo {
-            let truck = MKPointAnnotation()
+            //let truck = MKPointAnnotation()
+            let truck = FoodTruckAnnotation()
+            truck.position = position
             truck.coordinate = CLLocationCoordinate2D(latitude: Double(foodtruck.trucks[0].latitude ?? "37.787407398506105") ?? 37.787407398506105, longitude: Double(foodtruck.trucks[0].longitude ?? "-122.40741302567949") ?? -122.40741302567949)
-            print(truck.coordinate)
             mapview.addAnnotation(truck)
+            position = position + 1
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView!.annotation = annotation
+        }
+        let ann : FoodTruckAnnotation = annotation as! FoodTruckAnnotation
+        annotationView?.tag = ann.position
+        return annotationView
     }
-    */
-
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print(foodtrucksInfo[view.tag].trucks[0].applicant)
+    }
 }

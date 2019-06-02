@@ -15,6 +15,7 @@
 		7D2ED2D12299C6DA00446FEC /* FoodTruck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ED2D02299C6D900446FEC /* FoodTruck.swift */; };
 		7D2ED2D8229D0A3800446FEC /* NetworkHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ED2D7229D0A3800446FEC /* NetworkHandlers.swift */; };
 		7D2ED2DD22A110AD00446FEC /* FoodTrucksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ED2DC22A110AD00446FEC /* FoodTrucksListViewController.swift */; };
+		7D77347322A3AC25007B2CA9 /* FoodTruckAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D77347222A3AC25007B2CA9 /* FoodTruckAnnotation.swift */; };
 		7D8CB98822A30E00005E5334 /* FoodTruckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8CB98722A30E00005E5334 /* FoodTruckTableViewCell.swift */; };
 		7D8CB98B22A30E90005E5334 /* FoodTrucksMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8CB98A22A30E90005E5334 /* FoodTrucksMapViewController.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		7D2ED2D02299C6D900446FEC /* FoodTruck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruck.swift; sourceTree = "<group>"; };
 		7D2ED2D7229D0A3800446FEC /* NetworkHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandlers.swift; sourceTree = "<group>"; };
 		7D2ED2DC22A110AD00446FEC /* FoodTrucksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrucksListViewController.swift; sourceTree = "<group>"; };
+		7D77347222A3AC25007B2CA9 /* FoodTruckAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTruckAnnotation.swift; sourceTree = "<group>"; };
 		7D8CB98722A30E00005E5334 /* FoodTruckTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTruckTableViewCell.swift; sourceTree = "<group>"; };
 		7D8CB98A22A30E90005E5334 /* FoodTrucksMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrucksMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				7D2ED2D02299C6D900446FEC /* FoodTruck.swift */,
+				7D77347222A3AC25007B2CA9 /* FoodTruckAnnotation.swift */,
 			);
 			path = objects;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D77347322A3AC25007B2CA9 /* FoodTruckAnnotation.swift in Sources */,
 				7D8CB98B22A30E90005E5334 /* FoodTrucksMapViewController.swift in Sources */,
 				7D8CB98822A30E00005E5334 /* FoodTruckTableViewCell.swift in Sources */,
 				7D2ED2C02299C3AE00446FEC /* MainAppController.swift in Sources */,
@@ -337,8 +341,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9VR5YXMQQ6;
+				DEVELOPMENT_TEAM = EWST63VA92;
 				INFOPLIST_FILE = foodtrucks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,8 +360,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9VR5YXMQQ6;
+				DEVELOPMENT_TEAM = EWST63VA92;
 				INFOPLIST_FILE = foodtrucks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

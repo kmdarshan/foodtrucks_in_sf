@@ -126,6 +126,11 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MkP-0u-Ttq">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FIy-Yg-syC">
+                                <rect key="frame" x="0.0" y="539" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -140,6 +145,7 @@
                         <viewLayoutGuide key="safeArea" id="ksh-AN-gFt"/>
                     </view>
                     <connections>
+                        <outlet property="foodtruckInfoView" destination="FIy-Yg-syC" id="8qq-mi-l6q"/>
                         <outlet property="mapview" destination="MkP-0u-Ttq" id="cl2-cq-nl0"/>
                     </connections>
                 </viewController>
